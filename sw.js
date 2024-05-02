@@ -10,20 +10,18 @@ const INITIAL_CACHED_FILES = [
 self.addEventListener('install', (e) => {
   console.log('install!');
   e.waitUntill(
-    (async () => {
-      const cache = await caches.open(CACHE_NAME);
+    caches.open(CACHE_NAME).then((cache) => {
       cache.addAll(INITIAL_CACHED_FILES);
-    })()
+    })
   );
 });
 
 self.addEventListener('fetch', (e) => {
-  const cache = await caches.open(CACHE_NAME);
-
-  const cachedResponse = await cache.match(event.request);
-  if (cachedResponse !== undefined) {
-    e.respondWith(cachedResponse);
-  } else {
-    e.respondWith(fetch(e.request));
-  }
+  caches.match(event.request).then((cachedResponse) => {
+    if (cachedResponse !== undefined) {
+      e.respondWith(cachedResponse);
+    } else {
+      e.respondWith(fetch(e.request));
+    }
+  });
 });

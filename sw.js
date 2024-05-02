@@ -10,7 +10,7 @@ self.addEventListener('install', function(e) {
     (async () => {
       const cache = await caches.open(CACHE_NAME);
       cache.addAll(INITIAL_CACHED_FILES);
-    })(),
+    })()
   );
 });
 

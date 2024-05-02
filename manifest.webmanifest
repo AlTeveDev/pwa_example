@@ -4,6 +4,7 @@
   "start_url": "/pwa_example",
   "display": "standalone",
   "background_color": "#fff",
+  "theme_color": "#000"
   "description": "Copied from mozilla docs",
   "icons": [
     {

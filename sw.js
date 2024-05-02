@@ -1,8 +1,9 @@
 const CACHE_NAME = 'powerpoint-pwa_example';
 
 const INITIAL_CACHED_FILES = [
-  '/pwa_example'
-]
+  '/pwa_example/',
+  '/pwa_example/index.html,
+];
 
 self.addEventListener('install', function(e) {
   console.log('install!');

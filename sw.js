@@ -1,3 +1,5 @@
+console.log(100);
+
 const CACHE_NAME = 'powerpoint-pwa_example';
 
 const INITIAL_CACHED_FILES = [

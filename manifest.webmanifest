@@ -2,6 +2,7 @@
   "name": "PWA Example",
   "short_name": "Example",
   "start_url": "/pwa_example",
+  "scope": "/pwa_example",
   "display": "standalone",
   "background_color": "#fff",
   "theme_color": "#000",

@@ -18,10 +18,6 @@ self.addEventListener('install', (e) => {
 
 self.addEventListener('fetch', (e) => {
   caches.match(e.request).then((cachedResponse) => {
-    if (cachedResponse) {
-      e.respondWith(cachedResponse);
-    } else {
-      e.respondWith(fetch(e.request));
-    }
+    e.respondWith(cachedResponse ? cachedResponse : fetch(e.request)); 
   });
 });

@@ -9,7 +9,7 @@ const INITIAL_CACHED_FILES = [
 
 self.addEventListener('install', (e) => {
   console.log('install!');
-  e.waitUntill(
+  e.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       cache.addAll(INITIAL_CACHED_FILES);
     })
